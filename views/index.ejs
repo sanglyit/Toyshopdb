@@ -11,7 +11,7 @@
         
         <!-- (1): CREATE Task -->         
         <!-- --> 
-        <form action="/toy" method="POST">   
+        <form action="/toys" method="POST">   
             <input type="text" placeholder="Toy name" name="name" />        
             <input type="text" placeholder="Description" name="description" />
             <button type="submit">Submit</button>
@@ -20,14 +20,14 @@
 
         <!-- (2) READ Task -->                        
         <h2> READ: All Toys in Database </h2>
-        <ul class="toy">
-            <!-- Loop through toy -->
-            <% for(var i = 0; i < toy.length; i++) {%>
-                <li class="toys">
-                    <!-- Output name from the iterated toys object -->
-                    <span><%= toy[i].name %></span>:
-                    <!-- Output description from the iterated toys object -->
-                    <span><%= toy[i].description %></span>
+        <ul class="toys">
+            <!-- Loop through quotes -->
+            <% for(var i = 0; i < toys.length; i++) {%>
+                <li class="toy">
+                    <!-- Output name from the iterated toy object -->
+                    <span><%= toys[i].name %></span>:
+                    <!-- Output description from the iterated toy object -->
+                    <span><%= toys[i].description %></span>
                 </li>
             <% } %>
         </ul>    

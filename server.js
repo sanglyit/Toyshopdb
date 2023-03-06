@@ -17,7 +17,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         // (1a) CREATE: client -> create -> database -> 'star-wars-quotes'
         // -> create -> collection -> 'quotes'
         const db = client.db('star-wars-quotes')
-        const quotesCollection = db.collection('quotes')
+        const quotesCollection = db.collection('toys')
         
         // To tell Express to EJS as the template engine
         app.set('view engine', 'ejs') 
@@ -35,7 +35,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         // -> server -> '/' -> collection -> 'quotes' -> find() 
         // -> results -> index.ejs -> client
         app.get('/', (req, res) => {
-            db.collection('quotes').find().toArray()
+            db.collection('toys').find().toArray()
                 .then(results => {
 
                     // results -> server -> console
@@ -43,14 +43,14 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
                     
                     // results -> index.ejs -> client -> browser 
                     // The file 'index.ejs' must be placed inside a 'views' folder BY DEFAULT
-                    res.render('index.ejs', { quotes: results })
+                    res.render('index.ejs', { toys: results })
                 })
                 .catch(/* ... */)
         })
 
         // (1b) CREATE: client -> index.ejs -> data -> SUBMIT 
         // -> post -> '/quotes' -> collection -> insert -> result
-        app.post('/quotes', (req, res) => {
+        app.post('/toys', (req, res) => {
             quotesCollection.insertOne(req.body)
             .then(result => {
                 
