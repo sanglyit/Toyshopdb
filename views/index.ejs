@@ -3,31 +3,31 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Star Wars Quote App</title>
+        <title>ATN VietNamese Largest Toy Store!</title>
     </head>
 
     <body>
-        <h1>CREATE: May Node and Express be with you.</h1>
+        <h1>Wellcome to ATN the Largest Vietnamese Toy Store!</h1>
         
         <!-- (1): CREATE Task -->         
         <!-- --> 
-        <form action="/quotes" method="POST">   
-            <input type="text" placeholder="name" name="name" />        
-            <input type="text" placeholder="quote" name="quote" />
+        <form action="/toy" method="POST">   
+            <input type="text" placeholder="Toy name" name="name" />        
+            <input type="text" placeholder="Description" name="description" />
             <button type="submit">Submit</button>
         </form>
         <!-- -->                               
 
         <!-- (2) READ Task -->                        
-        <h2> READ: All Quotes in Database </h2>
-        <ul class="quotes">
-            <!-- Loop through quotes -->
-            <% for(var i = 0; i < quotes.length; i++) {%>
-                <li class="quote">
-                    <!-- Output name from the iterated quote object -->
-                    <span><%= quotes[i].name %></span>:
-                    <!-- Output quote from the iterated quote object -->
-                    <span><%= quotes[i].quote %></span>
+        <h2> READ: All Toys in Database </h2>
+        <ul class="toy">
+            <!-- Loop through toy -->
+            <% for(var i = 0; i < toy.length; i++) {%>
+                <li class="toys">
+                    <!-- Output name from the iterated toys object -->
+                    <span><%= toy[i].name %></span>:
+                    <!-- Output description from the iterated toys object -->
+                    <span><%= toy[i].description %></span>
                 </li>
             <% } %>
         </ul>    
