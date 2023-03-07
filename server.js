@@ -16,7 +16,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         
         // (1a) CREATE: client -> create -> database -> 'star-wars-quotes'
         // -> create -> collection -> 'quotes'
-        const db = client.db('star-wars-quotes')
+        const db = client.db('vn-toys')
         const quotesCollection = db.collection('toys')
         
         // To tell Express to EJS as the template engine
